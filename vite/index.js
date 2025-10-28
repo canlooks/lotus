@@ -1,1 +1,1 @@
-export { default } from '../dist/esm/vitePlugin.js';
+export {default} from '../dist/esm/vitePlugin.js';
