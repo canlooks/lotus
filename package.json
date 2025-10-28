@@ -2,12 +2,12 @@
   "name": "@canlooks/lotus",
   "version": "0.0.1",
   "author": "C.CanLiang <canlooks@gmail.com>",
-  "description": "A vite plugin for distributing deployment modular micro-front-end framework",
+  "description": "The simplest implementation of micro-frontend based on react",
   "license": "MIT",
   "keywords": [
     "vite",
     "vite plugin",
-    "microfrontends",
+    "micro frontend",
     "react"
   ],
   "publishConfig": {
@@ -40,7 +40,7 @@
     }
   },
   "scripts": {
-    "clean": "npx rm -rf dist",
+    "clean": "npx shx rm -rf dist",
     "build": "tsc -p tsconfig.json -m esnext --outDir dist/esm & tsc -p tsconfig.json -m commonjs --outDir dist/cjs",
     "rebuild": "npm run clean && npm run build",
     "test:unit": "npx ts-node test/unit.ts"

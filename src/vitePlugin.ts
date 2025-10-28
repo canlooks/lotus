@@ -1,7 +1,11 @@
-import {vitePluginMicroOptions} from '../vite'
 import path from 'path'
 import fs from 'fs'
 import {build, defineConfig, mergeConfig, PluginOption} from 'vite'
+import {InputOption} from 'rollup'
+
+type vitePluginMicroOptions = {
+    entry?: InputOption
+}
 
 export default function vitePluginMicro(options?: vitePluginMicroOptions): PluginOption {
     return {
