@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = void 0;
+const tslib_1 = require("tslib");
+// @ts-ignore
+var vitePlugin_1 = require("../dist/cjs/vitePlugin");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return tslib_1.__importDefault(vitePlugin_1).default; } });
