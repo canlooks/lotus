@@ -1,9 +1,11 @@
-import {DockingCallback} from '../index'
+import {ComponentType} from 'react'
+import {createRoot} from 'react-dom/client'
 
-export function defineRoot(name: string, callback: DockingCallback) {
-    if (typeof globalThis === 'undefined') {
-        return callback
+export function defineRoot(name: string, Component: ComponentType) {
+    if (typeof globalThis !== 'undefined') {
+        globalThis.$lotus ||= {}
+        globalThis.$lotus[name] = (container, initialProps) => {
+            createRoot(container).render(<Component {...initialProps}/>)
+        }
     }
-    globalThis.$lotus ||= {}
-    return globalThis.$lotus[name] = callback
 }

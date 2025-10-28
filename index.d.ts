@@ -17,11 +17,11 @@ declare namespace Lotus {
      * defineRoot
      */
 
-    type DockingCallback = (container: Container, initialProps?: any) => void
+    type Initializer = (container: Container, initialProps?: any) => void
 
-    type Initializers = Record<string, DockingCallback>
+    type Initializers = Record<string, Initializer>
 
-    function defineRoot<T extends DockingCallback>(name: string, callback: T): () => T
+    function defineRoot(name: string, component: ComponentType): void
 
     /**
      * --------------------------------------------------------------------------
