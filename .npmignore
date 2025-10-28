@@ -1,0 +1,9 @@
+/*
+
+# Ignore all files except those
+!/dist
+
+# Generic files
+!/LICENSE
+!/package.json
+!/README.md
