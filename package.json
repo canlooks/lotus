@@ -1,6 +1,6 @@
 {
   "name": "@canlooks/lotus",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "C.CanLiang <canlooks@gmail.com>",
   "description": "The simplest implementation of micro-frontend based on react",
   "license": "MIT",
@@ -26,10 +26,10 @@
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "types": "index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },

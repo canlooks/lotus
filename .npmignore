@@ -2,6 +2,7 @@
 
 # Ignore all files except those
 !/dist
+!/vite
 
 # Generic files
 !/LICENSE
