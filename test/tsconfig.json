@@ -1,8 +1,6 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "jsx": "react-jsx",
     "noUnusedLocals": false,
     "types": [
       "vite/client"
@@ -10,5 +8,8 @@
   },
   "include": [
     "**/*"
-  ]
+  ],
+  "ts-node": {
+    "module": "CommonJS"
+  }
 }

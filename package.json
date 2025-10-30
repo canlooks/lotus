@@ -43,7 +43,8 @@
     "clean": "npx shx rm -rf dist",
     "build": "tsc -p tsconfig.json -m esnext --outDir dist/esm & tsc -p tsconfig.json -m commonjs --outDir dist/cjs",
     "rebuild": "npm run clean && npm run build",
-    "test:unit": "npx ts-node test/unit.ts"
+    "test:browser": "vite -c test/vite.config.mts",
+    "test:node": "npx ts-node test/node.ts"
   },
   "dependencies": {
     "tslib": "^2.8.1"

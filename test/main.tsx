@@ -1,22 +1,33 @@
 import {createRoot} from 'react-dom/client'
-import {lazy, Suspense, useEffect, useRef, useState} from 'react'
+import React, {Component, lazy, ReactElement, Suspense, useEffect, useRef, useState} from 'react'
 
-createRoot(document.getElementById('app')!).render(
-    <>
-        <h1>Parent</h1>
-        <Child/>
-    </>
-)
+createRoot(document.getElementById('app')!).render(<App/>)
 
-// @ts-ignore
-const SubModule = lazy(() => import('subModule/sub'))
-
-function Child() {
+function App() {
     return (
-        <div>
-            <Suspense fallback="404">
-                <SubModule/>
+        <>
+            <h1>This is async component testing.</h1>
+            <Suspense fallback={<h2>Loading...</h2>}>
+                <AsyncComponent/>
             </Suspense>
-        </div>
+        </>
     )
+}
+
+let promise: Promise<ReactElement>
+
+function asyncFn() {
+    // promise ||= new Promise((resolve, reject) => setTimeout(() => reject(<h3>Hello</h3>), 1500))
+    const address = 'http://localhost:4173'
+    try {
+        promise ||= import(/* vite-ignore */address)
+    } catch (e) {
+        console.log('error handled')
+    }
+}
+
+function AsyncComponent() {
+    console.log('render')
+    asyncFn()
+    return promise
 }
